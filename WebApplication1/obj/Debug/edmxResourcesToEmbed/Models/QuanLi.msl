@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QuanLiModelStoreContainer" CdmEntityContainer="QuanLiEntities">
+    <EntitySetMapping Name="GIAO_VIEN">
+      <EntityTypeMapping TypeName="QuanLiModel.GIAO_VIEN">
+        <MappingFragment StoreEntitySet="GIAO_VIEN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HO_TEN" ColumnName="HO_TEN" />
+          <ScalarProperty Name="CHUC_VU" ColumnName="CHUC_VU" />
+          <ScalarProperty Name="TRINH_DO" ColumnName="TRINH_DO" />
+          <ScalarProperty Name="CHUYEN_MON" ColumnName="CHUYEN_MON" />
+          <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+          <ScalarProperty Name="SO_DIEN_THOAI" ColumnName="SO_DIEN_THOAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOC_SINH">
+      <EntityTypeMapping TypeName="QuanLiModel.HOC_SINH">
+        <MappingFragment StoreEntitySet="HOC_SINH">
+          <ScalarProperty Name="ID_HS" ColumnName="ID_HS" />
+          <ScalarProperty Name="ID_LOP" ColumnName="ID_LOP" />
+          <ScalarProperty Name="MA_HS" ColumnName="MA_HS" />
+          <ScalarProperty Name="ID_GV" ColumnName="ID_GV" />
+          <ScalarProperty Name="VANG_CO_PHEP" ColumnName="VANG_CO_PHEP" />
+          <ScalarProperty Name="VANG_KHONG_PHEP" ColumnName="VANG_KHONG_PHEP" />
+          <ScalarProperty Name="NGAY_THEO_DOI" ColumnName="NGAY_THEO_DOI" />
+          <ScalarProperty Name="BIEU_HIEN_CUA_TRE" ColumnName="BIEU_HIEN_CUA_TRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOP_HOC">
+      <EntityTypeMapping TypeName="QuanLiModel.LOP_HOC">
+        <MappingFragment StoreEntitySet="LOP_HOC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MA_LOP" ColumnName="MA_LOP" />
+          <ScalarProperty Name="NAM_HOC" ColumnName="NAM_HOC" />
+          <ScalarProperty Name="TEN_LOP" ColumnName="TEN_LOP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_LOGIN">
+      <EntityTypeMapping TypeName="QuanLiModel.USER_LOGIN">
+        <MappingFragment StoreEntitySet="USER_LOGIN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LOGIN_NAME" ColumnName="LOGIN_NAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

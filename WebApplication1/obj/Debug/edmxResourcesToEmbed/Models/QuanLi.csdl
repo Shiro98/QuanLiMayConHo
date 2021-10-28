@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="GIAO_VIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HO_TEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CHUC_VU" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TRINH_DO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CHUYEN_MON" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DIA_CHI" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SO_DIEN_THOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HOC_SINH">
+    <Key>
+      <PropertyRef Name="ID_HS" />
+    </Key>
+    <Property Name="ID_HS" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_LOP" Type="Int32" />
+    <Property Name="MA_HS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_GV" Type="Int64" />
+    <Property Name="VANG_CO_PHEP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VANG_KHONG_PHEP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NGAY_THEO_DOI" Type="DateTime" Precision="3" />
+    <Property Name="BIEU_HIEN_CUA_TRE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LOP_HOC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MA_LOP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAM_HOC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TEN_LOP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="USER_LOGIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LOGIN_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FULL_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="QuanLiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GIAO_VIEN" EntityType="Self.GIAO_VIEN" />
+    <EntitySet Name="HOC_SINH" EntityType="Self.HOC_SINH" />
+    <EntitySet Name="LOP_HOC" EntityType="Self.LOP_HOC" />
+    <EntitySet Name="USER_LOGIN" EntityType="Self.USER_LOGIN" />
+  </EntityContainer>
+</Schema>
