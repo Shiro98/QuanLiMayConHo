@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QuanLiModelStoreContainer" CdmEntityContainer="QuanLiEntities">
+  <EntityContainerMapping StorageEntityContainer="quanliModelStoreContainer" CdmEntityContainer="quanliEntities">
     <EntitySetMapping Name="GIAO_VIEN">
-      <EntityTypeMapping TypeName="QuanLiModel.GIAO_VIEN">
+      <EntityTypeMapping TypeName="quanliModel.GIAO_VIEN">
         <MappingFragment StoreEntitySet="GIAO_VIEN">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="HO_TEN" ColumnName="HO_TEN" />
@@ -15,7 +15,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="HOC_SINH">
-      <EntityTypeMapping TypeName="QuanLiModel.HOC_SINH">
+      <EntityTypeMapping TypeName="quanliModel.HOC_SINH">
         <MappingFragment StoreEntitySet="HOC_SINH">
           <ScalarProperty Name="ID_HS" ColumnName="ID_HS" />
           <ScalarProperty Name="ID_LOP" ColumnName="ID_LOP" />
@@ -25,11 +25,12 @@
           <ScalarProperty Name="VANG_KHONG_PHEP" ColumnName="VANG_KHONG_PHEP" />
           <ScalarProperty Name="NGAY_THEO_DOI" ColumnName="NGAY_THEO_DOI" />
           <ScalarProperty Name="BIEU_HIEN_CUA_TRE" ColumnName="BIEU_HIEN_CUA_TRE" />
+          <ScalarProperty Name="TEN_HOC_SINH" ColumnName="TEN_HOC_SINH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="LOP_HOC">
-      <EntityTypeMapping TypeName="QuanLiModel.LOP_HOC">
+      <EntityTypeMapping TypeName="quanliModel.LOP_HOC">
         <MappingFragment StoreEntitySet="LOP_HOC">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="MA_LOP" ColumnName="MA_LOP" />
@@ -39,7 +40,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="USER_LOGIN">
-      <EntityTypeMapping TypeName="QuanLiModel.USER_LOGIN">
+      <EntityTypeMapping TypeName="quanliModel.USER_LOGIN">
         <MappingFragment StoreEntitySet="USER_LOGIN">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="LOGIN_NAME" ColumnName="LOGIN_NAME" />

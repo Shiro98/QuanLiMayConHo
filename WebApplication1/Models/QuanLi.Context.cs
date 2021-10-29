@@ -13,10 +13,10 @@ namespace WebApplication1.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QuanLiEntities : DbContext
+    public partial class quanliEntities : DbContext
     {
-        public QuanLiEntities()
-            : base("name=QuanLiEntities")
+        public quanliEntities()
+            : base("name=quanliEntities")
         {
         }
     

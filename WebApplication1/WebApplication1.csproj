@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\DatabaseSql.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -142,6 +143,9 @@
     <Compile Include="Models\LOP_HOC.cs">
       <DependentUpon>QuanLi.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModelExtend\GIAO_VIENModel.cs" />
+    <Compile Include="Models\ModelExtend\HOC_SINHModel.cs" />
+    <Compile Include="Models\ModelExtend\LOP_HOCModel.cs" />
     <Compile Include="Models\QuanLi.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -164,7 +168,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\Controller\GiaoVien.js" />
+    <Content Include="app\Controller\HocSinh.js" />
     <Content Include="app\Controller\Login.js" />
+    <Content Include="app\Controller\LopHoc.js" />
+    <Content Include="Assest\Angular\angular-confirm.css" />
+    <Content Include="Assest\Angular\angular-confirm.js" />
+    <Content Include="Assest\Angular\angular-toastr.css" />
+    <Content Include="Assest\Angular\angular-toastr.js" />
+    <Content Include="Assest\Angular\angular-toastr.min.css" />
+    <Content Include="Assest\Angular\angular-toastr.min.js" />
+    <Content Include="Assest\Angular\angular-toastr.tpls.js" />
+    <Content Include="Assest\Angular\angular-toastr.tpls.min.js" />
     <Content Include="Assest\css\sb-admin-2.css" />
     <Content Include="Assest\css\sb-admin-2.min.css" />
     <Content Include="Assest\img\undraw_posting_photo.svg" />
@@ -2072,9 +2087,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Login\LoginUser.cshtml" />
+    <Content Include="Views\Home\Classroom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -22,5 +22,6 @@ namespace WebApplication1.Models
         public string VANG_KHONG_PHEP { get; set; }
         public Nullable<System.DateTime> NGAY_THEO_DOI { get; set; }
         public string BIEU_HIEN_CUA_TRE { get; set; }
+        public string TEN_HOC_SINH { get; set; }
     }
 }

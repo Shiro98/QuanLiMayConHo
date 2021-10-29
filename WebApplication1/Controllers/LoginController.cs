@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
@@ -14,16 +15,9 @@ namespace WebApplication1.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            if (Session["idUser"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
+            return View();
         }
-        private QuanLiEntities _db = new QuanLiEntities();
+        private quanliEntities _db = new quanliEntities();
         // GET: Home
 
         //GET: Register
@@ -62,10 +56,10 @@ namespace WebApplication1.Controllers
 
         //}
 
-        public ActionResult Login()
-        {
-            return View();
-        }
+        //public ActionResult Login()
+        //{
+        //    return View();
+        //}
 
 
 
@@ -81,17 +75,19 @@ namespace WebApplication1.Controllers
                 var data = _db.USER_LOGIN.Where(s => s.LOGIN_NAME == LoginName && s.PASSWORD == f_password).ToList();
                 if (data.Count() > 0)
                 {
+                    FormsAuthentication.SetAuthCookie(LoginName, true);
                     //add session
                     Session["idUser"] = data.FirstOrDefault().ID;
                     Session["FullName"] = data.FirstOrDefault().FULL_NAME;
                     //return RedirectToAction("Index", "Home");
-                    HomeController home = new HomeController { ControllerContext = ControllerContext };
-                    return home.Index();
+                    return Json(new { data = 1}, JsonRequestBehavior.AllowGet);
+                    //HomeController home = new HomeController { ControllerContext = ControllerContext };
+                    //return home.Index();
                 }
                 else
                 {
                     ViewBag.error = "Đăng Nhập thất bại";
-                    return RedirectToAction("Login");
+                    return Json(new { data = 0 }, JsonRequestBehavior.AllowGet);
                 }
             }
             return View();
@@ -102,7 +98,7 @@ namespace WebApplication1.Controllers
         public ActionResult Logout()
         {
             Session.Clear();//remove session
-            return RedirectToAction("Login");
+            return RedirectToAction("Index");
         }
 
 
