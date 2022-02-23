@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_a834a9_adminModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GIAO_VIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HO_TEN" Type="nvarchar" MaxLength="100" />
+    <Property Name="CHUC_VU" Type="nvarchar" MaxLength="300" />
+    <Property Name="TRINH_DO" Type="nvarchar" MaxLength="300" />
+    <Property Name="CHUYEN_MON" Type="nvarchar" MaxLength="300" />
+    <Property Name="DIA_CHI" Type="nvarchar" MaxLength="300" />
+    <Property Name="SO_DIEN_THOAI" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HOC_SINH">
+    <Key>
+      <PropertyRef Name="ID_HS" />
+    </Key>
+    <Property Name="ID_HS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_LOP" Type="int" Nullable="false" />
+    <Property Name="MA_HS" Type="varchar" MaxLength="50" />
+    <Property Name="ID_GV" Type="int" Nullable="false" />
+    <Property Name="VANG_CO_PHEP" Type="char" MaxLength="1" />
+    <Property Name="VANG_KHONG_PHEP" Type="char" MaxLength="1" />
+    <Property Name="NGAY_THEO_DOI" Type="datetime" />
+    <Property Name="BIEU_HIEN_CUA_HOC_SINH" Type="nvarchar" MaxLength="500" />
+    <Property Name="TEN_HOC_SINH" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOP_HOC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MA_LOP" Type="varchar" MaxLength="50" />
+    <Property Name="NAM_HOC" Type="varchar" MaxLength="50" />
+    <Property Name="TEN_LOP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="USER_LOGIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LOGIN_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FULL_NAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="db_a834a9_adminModelStoreContainer">
+    <EntitySet Name="GIAO_VIEN" EntityType="Self.GIAO_VIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOC_SINH" EntityType="Self.HOC_SINH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOP_HOC" EntityType="Self.LOP_HOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER_LOGIN" EntityType="Self.USER_LOGIN" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

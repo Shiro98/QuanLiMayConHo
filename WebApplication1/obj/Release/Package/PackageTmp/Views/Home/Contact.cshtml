@@ -1,0 +1,156 @@
+﻿@{
+    ViewBag.Title = "Giáo viên";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Home/Index">Trang chủ</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Giáo viên</li>
+    </ol>
+</nav>
+<div ng-controller="GiaoVienController">
+    <main class="main-system">
+        <div class="container-fluid d-flex flex-wrap">
+            <div class="row  no-gutters w-100" style="height:480px;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="padding: 0px;  padding-right: 2px;">
+                    <div class="row">
+                        <div style="font-size: 20pt;font-weight: bold;color: #00933f; text-align:center; align-content:center;justify-content:center">
+                            <span id="sidebar-btn">
+                                
+                            </span> GIÁO VIÊN
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12" align-self-end>
+                            <div class="main-action d-flex align-items-center flex-wrap" style="margin-left:20px; display:inline-block !important;">
+                                <div class="row">
+                                    <button class="btn-action-m bg-green"
+                                            ng-click="Add()">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                        <span>Thêm mới</span>
+                                    </button>
+                                    <button class="btn-action-m bg-green"
+                                            ng-click="Undo()"
+                                            style="margin-right: 10px;">
+                                        <i class="fa fa-ban" aria-hidden="true"></i>
+                                        <span>Huỷ thay đổi</span>
+                                    </button>
+                                    <button class="btn-action-m bg-green"
+                                            ng-click="Submit()" 
+                                            style="margin-right: 10px;">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        <span>Lưu</span>
+                                    </button>
+                                    <button class="btn-action-m"
+                                            ng-click="Delete()"
+                                            style="margin-right: 10px;background-color:#f55442;">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                        <span> Xóa </span>
+                                    </button>
+                                </div>
+
+                                <div class="main-action">
+                                    <div class="form-search" style="height:32px;width:500px;margin-left:800px;">
+                                        <input type="text" ng-model="search" ng-change="Bsearch()" placeholder="Tìm kiếm theo tên giáo viên" />
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-8"></div>
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Danh sách giáo viên</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">
+                                                <input type="checkbox" ng-click="toggleAll()" ng-model="isAllSelected" />
+                                            </th>
+                                            <th>STT</th>
+                                            <th>Tên Giáo viên</th>
+                                            <th>Chức vụ</th>
+                                            <th>Trình độ</th>
+                                            <th>Chuyên môn</th>
+                                            <th>Địa chỉ</th>
+                                            <th>Số điện thoại</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in DanhSach | filter : search" ng-click="loadTemplate($index, item)">
+                                            <td class="text-center">
+                                                <label class="pos-rel">
+                                                    <input type="checkbox" class="ace" ng-model="item.Checked" value="10" />
+                                                    <span class="lbl"></span>
+                                                </label>
+                                            </td>
+                                            <td>{{$index + 1}}</td>
+                                            <td>
+                                                <span ng-if="!item.Edit">{{item.HO_TEN}}</span>
+                                                <input type="text" ng-if="item.Edit" class="form-control" ng-model="item.HO_TEN">
+                                            </td>
+                                            <td>
+                                                <span ng-if="!item.Edit">{{item.CHUC_VU}}</span>
+                                                <input type="text" ng-if="item.Edit" class="form-control" ng-model="item.CHUC_VU">
+                                            </td>
+                                            <td>
+                                                <span ng-if="!item.Edit">{{item.TRINH_DO}}</span>
+                                                <input type="text" ng-if="item.Edit" class="form-control" ng-model="item.TRINH_DO">
+                                            </td>
+                                            <td>
+                                                <span ng-if="!item.Edit">{{item.CHUYEN_MON}}</span>
+                                                <input type="text" ng-if="item.Edit" class="form-control" ng-model="item.CHUYEN_MON">
+                                            </td>
+                                            <td>
+                                                <span ng-if="!item.Edit">{{item.DIA_CHI}}</span>
+                                                <input type="text" ng-if="item.Edit" class="form-control" ng-model="item.DIA_CHI">
+                                            </td>
+                                            <td>
+                                                <span ng-if="!item.Edit">{{item.SO_DIEN_THOAI}}</span>
+                                                <input type="text" ng-if="item.Edit" class="form-control" ng-model="item.SO_DIEN_THOAI">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr ng-repeat="row in rows">
+                                            <td class="text-left">
+                                            </td>
+                                            <td class="text-left">
+                                            </td>
+                                            <td class="text-left">
+                                                <input type="text" ng-model="row.HO_TEN" style="width:100%" placeholder="Nhập tên giáo viên" />
+                                            </td>
+                                            <td class="text-left">
+                                                <input type="text" ng-model="row.CHUC_VU" style="width:100%" placeholder="Nhập chức vụ" />
+                                            </td>
+                                            <td class="text-left">
+                                                <input type="text" ng-model="row.TRINH_DO" style="width:100%" placeholder="Nhập trình độ" />
+                                            </td>
+                                            <td class="text-left">
+                                                <input type="text" ng-model="row.CHUYEN_MON" style="width:100%" placeholder="Nhập chuyên môn" />
+                                            </td>
+                                            <td class="text-left">
+                                                <input type="text" ng-model="row.DIA_CHI" style="width:100%" placeholder="Nhập địa chỉ" />
+                                            </td>
+                                            <td class="text-left">
+                                                <input type="text" ng-model="row.SO_DIEN_THOAI" style="width:100%" placeholder="Nhập số điện thoại" />
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
