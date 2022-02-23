@@ -17,7 +17,7 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-        private quanliEntities _db = new quanliEntities();
+        private QuanLiEntities _db = new QuanLiEntities();
         // GET: Home
 
         //GET: Register

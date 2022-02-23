@@ -14,7 +14,7 @@ namespace WebApplication1.Models
     
     public partial class USER_LOGIN
     {
-        public long ID { get; set; }
+        public int ID { get; set; }
         public string LOGIN_NAME { get; set; }
         public string PASSWORD { get; set; }
         public string FULL_NAME { get; set; }

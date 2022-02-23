@@ -14,14 +14,14 @@ namespace WebApplication1.Models
     
     public partial class HOC_SINH
     {
-        public long ID_HS { get; set; }
-        public Nullable<int> ID_LOP { get; set; }
+        public int ID_HS { get; set; }
+        public int ID_LOP { get; set; }
         public string MA_HS { get; set; }
-        public Nullable<long> ID_GV { get; set; }
+        public int ID_GV { get; set; }
         public string VANG_CO_PHEP { get; set; }
         public string VANG_KHONG_PHEP { get; set; }
         public Nullable<System.DateTime> NGAY_THEO_DOI { get; set; }
-        public string BIEU_HIEN_CUA_TRE { get; set; }
+        public string BIEU_HIEN_CUA_HOC_SINH { get; set; }
         public string TEN_HOC_SINH { get; set; }
     }
 }

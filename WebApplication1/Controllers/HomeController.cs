@@ -13,7 +13,7 @@ namespace WebApplication1.Controllers
     //[Authorize]
     public class HomeController : Controller
     {
-        private quanliEntities _db = new quanliEntities();
+        private QuanLiEntities _db = new QuanLiEntities();
         public ActionResult Index()
         {
             if (Session["idUser"] != null)
@@ -236,8 +236,8 @@ namespace WebApplication1.Controllers
                     VANG_CO_PHEP = x.VANG_CO_PHEP,
                     VANG_KHONG_PHEP = x.VANG_KHONG_PHEP,
                     NGAY_THEO_DOI = x.NGAY_THEO_DOI,
-                    BIEU_HIEN_CUA_TRE = x.BIEU_HIEN_CUA_TRE,
-                    TEN_HOC_SINH = x.BIEU_HIEN_CUA_TRE,
+                    BIEU_HIEN_CUA_TRE = x.BIEU_HIEN_CUA_HOC_SINH,
+                    TEN_HOC_SINH = x.TEN_HOC_SINH,
                 }).ToList();
                 foreach (var i in data)
                 {
@@ -283,7 +283,7 @@ namespace WebApplication1.Controllers
                     }
                     else insertDB.VANG_KHONG_PHEP = "N";
                     insertDB.NGAY_THEO_DOI = DateTime.Now;
-                    insertDB.BIEU_HIEN_CUA_TRE = i.BIEU_HIEN_CUA_TRE;
+                    insertDB.BIEU_HIEN_CUA_HOC_SINH = i.BIEU_HIEN_CUA_TRE;
                     insertDB.TEN_HOC_SINH = i.TEN_HOC_SINH;
                     _db.HOC_SINH.Add(insertDB);
                     _db.SaveChanges();
@@ -340,7 +340,7 @@ namespace WebApplication1.Controllers
                     }
                     else update.VANG_KHONG_PHEP = "N";
                     update.NGAY_THEO_DOI = DateTime.Now;
-                    update.BIEU_HIEN_CUA_TRE = i.BIEU_HIEN_CUA_TRE;
+                    update.BIEU_HIEN_CUA_HOC_SINH = i.BIEU_HIEN_CUA_TRE;
                     update.TEN_HOC_SINH = i.TEN_HOC_SINH;
                     _db.SaveChanges();
                 }

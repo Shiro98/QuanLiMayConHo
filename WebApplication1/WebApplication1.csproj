@@ -2062,6 +2062,7 @@
     <Content Include="Models\QuanLi.edmx.diagram">
       <DependentUpon>QuanLi.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -14,7 +14,7 @@ namespace WebApplication1.Models
     
     public partial class GIAO_VIEN
     {
-        public long ID { get; set; }
+        public int ID { get; set; }
         public string HO_TEN { get; set; }
         public string CHUC_VU { get; set; }
         public string TRINH_DO { get; set; }
